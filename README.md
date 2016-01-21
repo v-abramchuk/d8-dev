@@ -8,4 +8,8 @@
                                  
 ```
 
+## Quick start
 
+```bash
+docker build -t d8-dev drupal-web && docker run -i --rm d8-dev
+```
