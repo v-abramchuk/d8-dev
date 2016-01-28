@@ -1,5 +1,5 @@
 web:
-  image: d8-dev:latest
+  image: abramm/d8-dev-web:latest
   ports:
     - "8000:80"
   links:
