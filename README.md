@@ -19,5 +19,5 @@ docker-compose up
 ```
 
 That's all! You'll end up running with a fresh Drupal 8 installation at [http://localhost:8000](http://localhost:8000).
-The administrator login is **admin**, password is **password**.
+The administrator login is **admin**, password is **password**. Your Drupal files will be accessible at `data/htdocs`.
 
