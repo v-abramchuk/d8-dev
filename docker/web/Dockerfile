@@ -34,6 +34,7 @@ ADD entrypoint.sh /entrypoint.sh
 ADD download_drupal.sh /download_drupal.sh
 ADD logo.txt /usr/local/share/logo.txt
 
+EXPOSE 80
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["apache2-foreground"]
 

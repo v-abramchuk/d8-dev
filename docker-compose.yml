@@ -1,0 +1,19 @@
+web:
+  image: d8-dev:latest
+  ports:
+    - "8000:80"
+  links:
+    - mysql
+  volumes:
+    - ./data/htdocs:/var/www/html
+    - ./dummyfile:/tmp/dummyfile
+mysql:
+  image: mysql
+  volumes:
+    - ./data/mysql:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: d8-dev
+    MYSQL_DATABASE: drupal
+    MYSQL_USER: drupal
+    MYSQL_PASSWORD: password
+    
