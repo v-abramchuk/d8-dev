@@ -27,6 +27,15 @@ RUN { \
 RUN wget -O /usr/local/bin/gosu "https://github.com/tianon/gosu/releases/download/1.7/gosu-$(dpkg --print-architecture)" \
 	&& chmod +x /usr/local/bin/gosu
 
+RUN cd /tmp && \
+  curl -sS https://getcomposer.org/installer | php && \
+  mv composer.phar /usr/local/bin/composer
+ADD https://github.com/drush-ops/drush/releases/download/8.0.1/drush.phar /usr/local/bin/drush
+RUN chmod 755 /usr/local/bin/drush
+
+RUN echo "Europe/Kiev" > /etc/timezone && \
+    dpkg-reconfigure -f noninteractive tzdata
+
 WORKDIR /var/www/html
 VOLUME ["/var/www/html"]
 
