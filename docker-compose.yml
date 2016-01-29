@@ -13,8 +13,14 @@ mysql:
   volumes:
     - ./data/mysql:/var/lib/mysql
   environment:
-    MYSQL_ROOT_PASSWORD: d8-dev
+    MYSQL_ROOT_PASSWORD: password
     MYSQL_DATABASE: drupal
     MYSQL_USER: drupal
     MYSQL_PASSWORD: password
-    
+phpmyadmin:
+  image: nazarpc/phpmyadmin
+  links:
+    - mysql
+  ports:
+    - "8001:80"
+
