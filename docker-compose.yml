@@ -9,9 +9,10 @@ web:
     - ./dummyfile:/tmp/dummyfile
   hostname: d8-dev-web
 mysql:
-  image: mysql
+  image: abramm/d8-dev-mysql:latest
   volumes:
     - ./data/mysql:/var/lib/mysql
+    - ./dummyfile:/tmp/dummyfile
   environment:
     MYSQL_ROOT_PASSWORD: password
     MYSQL_DATABASE: drupal
